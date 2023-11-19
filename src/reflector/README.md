@@ -8,3 +8,6 @@ Load the reflector kernel function to interface `eth0`:<br/>
 
 Unload reflector kernel function:<br/>
 `$ ./xdp-loader unload eth0 --all`
+
+## xdp-load
+Please refer to the [`xdp-loader` documentation](../../lib/xdp-tools/xdp-loader/README.org) for command line options.
