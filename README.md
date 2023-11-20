@@ -2,7 +2,7 @@
 
 ## Setup 
 1. Follow the [install_dependencies.md](install_dependencies.md) to setup dependencies. 
-2. Run `./config` to verify dependencies and generate `config.mk` for compiling. 
+2. Run `./configure` to verify dependencies and generate `config.mk` for compiling. 
 3. Run `make` to compile all modules.
 
 ## Quick Start
