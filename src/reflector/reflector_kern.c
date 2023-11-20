@@ -108,7 +108,7 @@ static __always_inline struct stamp_reply_pkt* rewrite_stamp_packet(struct hdr_c
 	}
 	
 	// Check UDP source port, STAMP uses 862 by default
-	if (bpf_ntohs(udp_hdr->source) != 862)
+	if (bpf_ntohs(udp_hdr->dest) != 862)
 		return NULL;
 	nh->pos  = udp_hdr + 1;
 
