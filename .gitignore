@@ -6,6 +6,7 @@
 *.ko
 *.obj
 *.elf
+*.ll
 
 # Linker output
 *.ilk
@@ -53,3 +54,10 @@ dkms.conf
 
 # STAMP data
 data/
+
+# config file
+config.mk
+
+# compiled exectuible 
+src/collector/collector_user
+src/reflector/xdp-loader
