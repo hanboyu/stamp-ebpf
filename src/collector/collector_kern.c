@@ -1,4 +1,10 @@
-/* SPDX-License-Identifier: GPL-2.0 */
+/**
+ * @author Boyu Han
+ * @email bh2470@nyu.edu
+ * @create date Nov 19th, 2023
+ * @modify date May 27th, 2024
+ */
+
 #include <linux/if_ether.h>
 #include <linux/ip.h>
 #include <linux/in.h>
@@ -75,6 +81,7 @@ struct {
 	__type(key, __u32);
 	__type(value, struct stamp_data);
 	__uint(max_entries, STAMP_MAP_SIZE);
+	__uint(pinning, LIBBPF_PIN_BY_NAME);
 } stamp_data_map SEC(".maps");
 
 struct {
@@ -82,6 +89,7 @@ struct {
 	__type(key, __u32);
 	__type(value, __u32);
 	__uint(max_entries, 1);
+	__uint(pinning, LIBBPF_PIN_BY_NAME);
 } counter_map SEC(".maps");
 
 SEC("xdp")
@@ -145,4 +153,5 @@ int  stamp_collector(struct xdp_md *ctx)
 	return XDP_DROP;
 }
 
+/* SPDX-License-Identifier: GPL-2.0 */
 char _license[] SEC("license") = "GPL";
